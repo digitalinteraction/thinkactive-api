@@ -1,0 +1,22 @@
+{
+  "meta": {
+      "success": true,
+      "messages": []
+  },
+  "data": [
+      {
+          "id": 1,
+          "name": "Example Challenge",
+          "deploymentId": 1,
+          "mode": "TOTAL",
+          "vs": true,
+          "from": "2018-05-30T17:51:30.000Z",
+          "to": "2018-05-30T17:51:30.000Z",
+          "deleted": false,
+          "message": "This challenge has been updated",
+          "createdBy": 1,
+          "createdAt": "2018-05-30T17:51:30.000Z",
+          "updatedAt": "2018-05-30T17:51:30.000Z"
+      }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "username": "unauthenticatedUser",
+    "email": "unauthenticatedUser@thinkactive.io",
+    "createdAt": "2018-03-14T16:57:47.000Z",
+    "updatedAt": "2018-03-14T16:57:47.000Z"
+  },
+  {
+    "id": 2,
+    "username": "authenticatedUser",
+    "email": "authenticatedUser@thinkactive.io",
+    "createdAt": "2018-03-14T16:57:48.000Z",
+    "updatedAt": "2018-03-14T16:57:48.000Z"
+  }
+]

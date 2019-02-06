@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": [
+    {
+      "id": 1,
+      "name": "Demo Deployment 1",
+      "organisationId": 1,
+      "baselineFrom": "2018-03-15T14:52:57.000Z",
+      "baselineTo": "2018-03-15T14:52:57.000Z",
+<<<<<<< HEAD
+      "activityTo": "2018-03-15T14:52:57.000Z",
+      "activityFrom": "2018-03-15T14:52:57.000Z",
+=======
+      "activityFrom": "2018-03-15T14:52:57.000Z",
+      "activityTo": "2018-03-15T14:52:57.000Z",
+>>>>>>> development
+      "createdBy": 1,
+      "location": "Demo Location",
+      "pointOfContact": "Demo User",
+      "createdAt": "2018-03-15T14:52:57.000Z",
+      "updatedAt": "2018-03-15T14:52:57.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Demo Deployment 2",
+      "organisationId": 1,
+      "baselineFrom": "2018-03-15T14:52:57.000Z",
+      "baselineTo": "2018-03-15T14:52:57.000Z",
+<<<<<<< HEAD
+      "activityTo": "2018-03-15T14:52:57.000Z",
+      "activityFrom": "2018-03-15T14:52:57.000Z",
+=======
+      "activityFrom": "2018-03-15T14:52:57.000Z",
+      "activityTo": "2018-03-15T14:52:57.000Z",
+>>>>>>> development
+      "createdBy": 1,
+      "location": "Demo Location",
+      "pointOfContact": "Demo User",
+      "createdAt": "2018-03-15T14:52:57.000Z",
+      "updatedAt": "2018-03-16T14:46:02.000Z"
+    }
+  ]
+}

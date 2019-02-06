@@ -1,0 +1,47 @@
+version: '2'
+
+volumes:
+  mysql_data:
+
+services:
+  web:
+    links:
+      - ta_mysql
+      - redis
+    build: .
+    volumes:
+      - ./api:/usr/src/api
+      - ./app:/usr/src/app
+      - ./seeders:/usr/src/seeders
+      - ./test:/usr/src/test
+      - ./.sequelizerc:/user/src
+    command: run watch
+    ports:
+      - "3000:3000"
+      - "5858:5858"
+    env_file: .env
+    environment:
+      FORGOTTEN_PASSWORD_TIMEOUT_IN_HOURS: '24'
+      INVITE_CODE_TIMEOUT_IN_HOURS: '24'
+      REDIS_URL: redis
+      SQL_HOST: ta_mysql
+      SQL_USER: SQL_USER
+      SQL_PASS: SQL_PASS
+      SQL_DB: SQL_DB
+
+  ta_mysql:
+    image: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: MYSQL_DATABASE
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    container_name: thinkactive-redis

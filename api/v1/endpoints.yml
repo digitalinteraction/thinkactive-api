@@ -1,0 +1,186 @@
+version: 1
+---
+auth:
+  base: /auth
+  name: Auth
+  endpoints:
+  - post: /login login
+    info: Log user in with credentials (provide plain text password)
+    body:
+      email: string - Email of user
+      password: string - Password of user
+    responses:
+      - 200: Success auth/login.json
+
+  - get: /me me
+    info: Get current user object (using browser cookie for user reference)
+    responses:
+      - 200: Success auth/me.json
+
+  - post: /logout logout
+    info: Log current user out of system (using browser cookie for user reference)
+    responses:
+      - 200: Success auth/logout.json
+
+  - post: /forgot forgot
+    info: Request forgotten password email reset link (contains forgotten password token)
+    body:
+      email: string - Email of user requesting password request
+    responses:
+      - 200: Success auth/forgot.json
+
+  - post: /reset reset
+    info: Request forgotten password email reset link
+    body:
+      password: string - New password of user
+      token: string - Forgotten password token
+
+organisations:
+  base: /organisations
+  name: Organisations
+  endpoints:
+  - get: / index
+    info: Get all organisations current logged in user is associated with
+    responses:
+      - 200: Success organisations/index.json
+
+  - get: /:id show
+    info: Get organisation by id
+    params:
+      id: integer - Id of organisation
+    responses:
+      - 200: Success organisations/id.json
+
+  - post: /:id/invite invite
+    info: Invite user by email to join organisation as organisationMember
+    params:
+      id: integer - Id of organisation
+    body:
+      email: string - Email of invited user
+    responses:
+      - 200: Success organisations/invite.json
+
+  - post: /join join
+    info: Join an organisation using the invite code emailed to the user
+    body:
+      firstName: string - First name of invited user
+      lastName: string - Last name of invited user
+      password: string - Password (plain text)
+      code: string - Invite code previously emailed to user (see organisations/:id/invite)
+    responses:
+      - 200: Success organisations/join.json
+
+  - get: /:id/devices devices.index
+    name: Devices
+    info: Get available devices owned by an organisation
+    params:
+      id: integer - Id of organisation
+    responses:
+      - 200: Success organisations/devices.json
+
+deployments:
+  base: /deployments
+  name: Deployments
+  endpoints:
+  - get: / index
+    info: Get all deployments current logged in user is associated with
+    responses:
+      - 200: Success deployments/index.json
+
+  - get: /:id show
+    info: Get deployment by id
+    params:
+      id: integer - Id of deployment
+    responses:
+      - 200: Success deployments/id.json
+
+  - get: /:id/users users.index
+    name: Users
+    info: Get deployment users and user devices by deployment id
+    params:
+      id: integer - Id of deployment
+    responses:
+      - 200: Success deployments/users.json
+
+  - post: /:id/users create
+    info: Add a new user to the deployment
+    params:
+      id: integer - Id of deployment
+    body:
+      deviceId: integer - The id of the device
+    responses:
+      - 200: Success deployments/users.json
+
+  - post: /:deploymentId/device/:deploymentDeviceId/data uploadData
+    info: Post deploymentDevice data
+    params:
+      deploymentId: integer - Id of deployment
+      deploymentDeviceId: integer - DeploymentDeviceId of deployment device
+    body:
+      deploymentUserId: integer - Id of deploymentUserId
+      batteryLevel: integer - Battery level of device at time of sync attempt
+      epochInterval: integer - Epoch interval of device (milliseconds)
+      lastBlockSynced: integer - Last active block synced from device
+      lastRTC: integer - Seconds counter on device
+      lastSyncTime: datetime - Datetime of when device was last synced (ISO8601 format)
+      samples: array - Array of samples objects
+        # steps: integer - Number of steps taken within epoch interval
+        # batteryLevel: integer - BatteryLevel of device
+        # recordedOn: datetime - Datetime of event
+      raw: string - Raw bytes from device sync attempt
+    responses:
+      - 200: Success deployments/device.data.create.json
+
+  - get: /:deploymentId/data queryData
+    info: Get deploymentUser data for single or multiple users
+    params:
+      deploymentId: integer - Id of deployment
+      deploymentUserIds: integer[] - DeploymentUserIds of deployment user(s)
+      from: datetime - Start query point
+      to: datetime - End query point
+      interval: integer - Interval period (pass in format, e.g. 60 (SECONDS) / 1 (HOUR) same query)
+      intervalUnit: string - Interval (bucket sieze) e.g. calculate per day steps / per hour steps (SECOND, MINUTE, HOUR, DAY)
+    responses:
+      - 200: Success deployments/device.data.json
+
+  - get: /:deploymentId/challenges challengeIndex
+    name: Get Challenges
+    info: Get deployment challenges by deployment id
+    params:
+      deploymentId: integer - Id of deployment
+    responses:
+      - 200: Success deployments/challenge.json
+
+  - post: /:deploymentId/challenges createChallenge
+    name: Create Challenges
+    info: Create challenge for deployment id
+    params:
+      deploymentId: integer - Id of deployment
+    body:
+      name: integer - Name of challenge
+      message: text - The challenge text i.e. Can you walk to the moon and back by next week!
+      metric: TOTAL / AVERAGE - Mode of challenge
+      mode: EVERYONE / GROUP - If the challenge encourages teams to compete or is a group challenge
+      target: integer - Target for challenge to be completed
+      start: datetime - Start datetime of challenge
+      end: datetime - End datetime of challenge
+      deleted: boolean - If the challenge should be deleted
+    responses:
+      - 200: Success deployments/challenge.create.json
+
+  - put: /:deploymentId/challenges/:challengeId Challenges
+    name: Update Challenge
+    info: Update challenge for challenge id
+    params:
+      deploymentId: integer - Id of deployment
+    body:
+      name: integer - Name of challenge
+      message: text - The challenge text i.e. Can you walk to the moon and back by next week!
+      metric: TOTAL / AVERAGE - Mode of challenge
+      mode: EVERYONE / GROUP - If the challenge encourages teams to compete or is a group challenge
+      target: integer - Target for challenge to be completed
+      start: datetime - Start datetime of challenge
+      end: datetime - End datetime of challenge
+      deleted: boolean - If the challenge should be deleted
+    responses:
+      - 200: Success deployments/challenge.update.json

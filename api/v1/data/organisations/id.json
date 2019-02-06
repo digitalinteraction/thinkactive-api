@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": {
+    "id": 1,
+    "name": "Demo Organisation",
+    "createdAt": "2018-03-14T17:02:04.000Z",
+    "updatedAt": "2018-03-14T17:02:04.000Z",
+    "users": [
+      {
+        "id": 1,
+        "username": "Demo username 1",
+        "email": "demouser1@domain.com",
+        "createdAt": "2018-03-14T16:57:47.000Z",
+        "updatedAt": "2018-03-21T11:46:21.000Z",
+        "organisationUser": {
+          "organisationId": 1,
+          "userId": 1,
+          "role": "organisationMember",
+          "createdAt": "2018-03-14T17:02:56.000Z",
+          "updatedAt": "2018-03-14T17:02:56.000Z"
+        }
+      },
+      {
+        "id": 3,
+        "username": "Demo username 2",
+        "email": "demouser2@domain.com",
+        "createdAt": "2018-03-21T14:14:51.000Z",
+        "updatedAt": "2018-03-21T14:14:51.000Z",
+        "organisationUser": {
+          "organisationId": 1,
+          "userId": 3,
+          "role": "organisationMember",
+          "createdAt": "2018-03-14T17:13:02.000Z",
+          "updatedAt": "2018-03-14T17:13:02.000Z"
+        }
+      }
+    ]
+  }
+}

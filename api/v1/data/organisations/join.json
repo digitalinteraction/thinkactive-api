@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": {
+    "id": 3,
+    "username": "Demo user",
+    "email": "demo.uni@host.com",
+    "updatedAt": "2018-03-21T14:14:51.693Z",
+    "createdAt": "2018-03-21T14:14:51.693Z"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": {
+    "id": 1,
+    "name": "Demo Deployment 1",
+    "organisationId": 1,
+    "baselineFrom": "2018-03-15T14:52:57.000Z",
+    "baselineTo": "2018-03-15T14:52:57.000Z",
+    "activityFrom": "2018-03-15T14:52:57.000Z",
+    "activityTo": "2018-03-15T14:52:57.000Z",
+    "createdBy": 1,
+    "location": "Demo Location",
+    "pointOfContact": "Demo User 1",
+    "createdAt": "2018-03-15T14:52:57.000Z",
+    "updatedAt": "2018-03-15T14:52:57.000Z"
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"name": "St Johns Primary School",
+	"organisationId": 1,
+	"baselineFrom": "2018-03-15T14:52:57.000Z",
+	"baselineTo": "2018-03-15T14:52:57.000Z",
+	"activityFrom": "2018-03-15T14:52:57.000Z",
+	"activityTo": "2018-03-15T14:52:57.000Z",
+	"location": "Newcastle",
+	"pointOfContact": "Andy",
+	"createdAt": "2018-03-15T14:52:57.000Z",
+	"updatedAt": "2018-03-15T14:52:57.000Z",
+	"devices": [
+		{
+			"id": 1,
+			"macAddress": "ABC:123:DEF:456"
+		},
+		{
+			"id": 2,
+			"macAddress": "ABC:123:DEF:456"
+		}
+	]
+}

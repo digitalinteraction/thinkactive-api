@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": {
+    "id": 1,
+    "username": "Test User",
+    "email": "user@testemail.com",
+    "createdAt": "2018-03-14T16:57:47.000Z",
+    "updatedAt": "2018-03-14T16:57:47.000Z"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": [
+    {
+      "id": 1,
+      "name": "Demo Organisation",
+      "createdAt": "2018-03-14T17:02:04.000Z",
+      "updatedAt": "2018-03-14T17:02:04.000Z"
+    }
+  ]
+}

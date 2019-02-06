@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "success": true,
+    "messages": []
+  },
+  "data": [
+    {
+      "id": 1,
+      "deploymentId": 1,
+      "userId": 1,
+      "avatar": "Demo-Avatar-1",
+      "createdAt": "2018-03-15T15:15:30.000Z",
+      "updatedAt": "2018-03-15T15:15:30.000Z",
+      "devices": [
+        {
+          "id": 1,
+          "macAddress": "AB:CD:EF:GH:IF:JL",
+          "epochInterval": 1000,
+          "createdAt": "2018-03-15T15:20:55.000Z",
+          "updatedAt": "2018-03-15T15:20:55.000Z",
+          "deploymentDevices": {
+            "createdAt": "2018-03-15T15:10:42.000Z",
+            "updatedAt": "2018-03-15T15:10:42.000Z",
+            "deploymentUserId": 1,
+            "deviceId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "deploymentId": 1,
+      "userId": 2,
+      "avatar": "Demo-Avatar-2",
+      "createdAt": "2018-03-15T15:32:13.000Z",
+      "updatedAt": "2018-03-15T15:32:13.000Z",
+      "devices": [
+        {
+          "id": 1,
+          "macAddress": "MP:QR:ST:UV:WX:YZ",
+          "epochInterval": 1000,
+          "createdAt": "2018-03-15T15:20:55.000Z",
+          "updatedAt": "2018-03-15T15:20:55.000Z",
+          "deploymentDevices": {
+            "createdAt": "2018-03-15T15:31:38.000Z",
+            "updatedAt": "2018-03-15T15:31:38.000Z",
+            "deploymentUserId": 2,
+            "deviceId": 1
+          }
+        }
+      ]
+    }
+  ]
+}
